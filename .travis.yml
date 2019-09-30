@@ -7,13 +7,11 @@ cache:
   directories:
     - "node_modules"
 install:
-  - npm install    
-services:
-  -mysql
+  - npm install
+services: -mysql
 before_script:
-  - mysql -e 'drop database if exists travis;' -U mysql
-  - mysql -e 'create database travis;' -U mysql
-  - npm run build   
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
+    - npm run build
 script:
   - npm run test
 after_success:
