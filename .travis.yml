@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - "stable"
+notifications:
+  email: false
+cache:
+  directories:
+    - "node_modules"
+install:
+  - npm install    
+services:
+  -mysql
+before_script:
+  - mysql -e 'drop database if exists travis;' -U mysql
+  - mysql -e 'create database travis;' -U mysql
+  - npm run build   
+script:
+  - npm run test
+after_success:
+  - npm run coverage

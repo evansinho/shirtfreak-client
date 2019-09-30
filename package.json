@@ -1,0 +1,24 @@
+{
+  "name": "Turing-Backend",
+  "version": "1.0.0",
+  "description": "An E-commerce app for selling shirts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evansinho/Turing-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evansinho/Turing-Backend/issues"
+  },
+  "homepage": "https://github.com/evansinho/Turing-Backend#readme",
+  "devDependencies": {
+    "codeclimate-test-reporter": "^0.5.1",
+    "coveralls": "^3.0.6"
+  }
+}
