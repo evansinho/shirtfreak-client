@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 /* eslint-disable require-jsdoc */
 export function up(queryInterface, Sequelize) {
-  return queryInterface.createTable("Customers", {
+  return queryInterface.createTable("Attributes", {
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -9,27 +9,17 @@ export function up(queryInterface, Sequelize) {
       type: Sequelize.INTEGER
     },
     name: {
-      type: Sequelize.STRING,
-      allowNull: false
-    },
-    email: {
-      type: Sequelize.STRING,
-      allowNull: false
-    },
-    password: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING(100),
       allowNull: false
     },
     createdAt: {
-      allowNull: false,
       type: Sequelize.DATE
     },
     updatedAt: {
-      allowNull: false,
       type: Sequelize.DATE
     }
   });
 }
-export function down(queryInterface, Sequelize) {
-  return queryInterface.dropTable("Customers");
+export function down(queryInterface) {
+  return queryInterface.dropTable("Attributes");
 }

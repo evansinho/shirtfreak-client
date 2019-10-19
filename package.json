@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec babel-node server/index.js",
-    "migrations": "npx sequelize-cli db:migrate",
+    "migration": "npx sequelize-cli db:migrate && npm run seeder",
+    "undo-migration": "npx sequelize-cli db:migrate:undo:all",
+    "seeder": "npx sequelize db:seed:all",
     "clean": "rm -rf dist",
     "build": "npm run clean && mkdir dist && babel server -s -d dist --ignore *.test.js && npm run migrations",
     "heroku-postbuild": "cd server && npm install && npm run build",
     "start": "node dist/index.js",
-    "seq": "sequelize model:create --name Customer --attributes name:string,email:string,password:string"
+    "seq": "sequelize model:create --name OrderDetails  --attributes created_on:time "
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,7 @@
   "homepage": "https://github.com/evansinho/Turing-Backend#readme",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "bcryptjs": "^2.4.3",
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
