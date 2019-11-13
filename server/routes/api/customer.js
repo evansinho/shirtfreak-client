@@ -6,8 +6,8 @@ import auth from "../../middleware/auth";
 const router = express.Router();
 
 // Auth endpoints
-router.post("/", AuthController.signUp);
-router.post("/signin", AuthController.signIn);
-router.post("/edit", auth, AuthController.editProfile);
+router.post("/customers", AuthController.signUp);
+router.post("/customers/signin", AuthController.signIn);
+router.patch("/customers", auth, AuthController.editProfile);
 
 export default router;

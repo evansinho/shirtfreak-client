@@ -145,14 +145,14 @@ class AuthController {
           message: "Access Denied!"
         });
       }
-      await Customer.update({
+      await user.update({
         address_1: address1 || user.address_1,
         address_2: address2 || user.address_2,
         city: city || user.city,
         region: region || user.region,
         postal_code: postalCode || user.postal_code,
         country: country || user.country,
-        day_phone: dayPhone || user.dayPhone,
+        day_phone: dayPhone || user.day_phone,
         eve_phone: evePhone || user.eve_phone,
         mob_phone: mobPhone || user.mob_phone,
         shipping_region_id: shippingRegionId || user.shipping_region_id
