@@ -10,7 +10,6 @@ export default (sequelize, DataTypes) => {
     },
     {}
   );
-
   Attribute.associate = models => {
     Attribute.hasMany(models.AttributeValue, {
       foreignKey: "attribute_id"
